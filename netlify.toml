@@ -1,6 +1,7 @@
 # ==========================================
 # NETLIFY.TOML - CONFIGURACIÓN OPTIMIZADA 2025
 # Página estática React + Vite + TypeScript
+# CSP FIX APLICADO
 # ==========================================
 
 [build]
@@ -36,11 +37,11 @@
     # Política de referrer optimizada
     Referrer-Policy = "strict-origin-when-cross-origin"
     
-    # Content Security Policy optimizada para React + Vite
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self';"
+    # Content Security Policy CORREGIDA - Permite data: URIs para fonts
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self';"
     
     # Permissions Policy - Deniega permisos no necesarios
-    Permissions-Policy = "geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), speaker=()"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=()"
 
 [[headers]]
   # CSS, JS, y otros assets estáticos
@@ -69,15 +70,16 @@
     # CORS para fonts
     Access-Control-Allow-Origin = "*"
 
-# [build.environment]
-  # NODE_VERSION = "18"
-
-[dev]
-  # Puerto local para development
-  port = 5173
+[[headers]]
+  # Fonts WOFF también
+  for = "/*.woff"
   
-  # Framework detection automática
-  framework = "#auto"
+  [headers.values]
+    # Cache extra largo para fonts
+    Cache-Control = "public, max-age=31536000, immutable"
+    
+    # CORS para fonts
+    Access-Control-Allow-Origin = "*"
 
 # Configuración específica para production
 [context.production]
