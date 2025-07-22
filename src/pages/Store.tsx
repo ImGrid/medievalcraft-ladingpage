@@ -11,11 +11,9 @@ const Store: React.FC = () => {
         title={storeData.hero.title}
         description={storeData.hero.description}
       />
-
       {storeData.sections.map((section) => (
         <ProductSection key={section.id} section={section} />
       ))}
-
       <CallToActionSection />
     </div>
   );
