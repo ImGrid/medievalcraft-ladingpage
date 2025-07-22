@@ -1,0 +1,479 @@
+@font-face {
+  font-family: "Minecraft";
+  src: url("../assets/fonts/MinecraftTen-VGORe.woff2") format("woff2"),
+    url("../assets/fonts/MinecraftTen-VGORe.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-minecraft {
+  font-family: "Minecraft", "Orbitron", "Arial Black", sans-serif;
+  letter-spacing: 0.05em;
+  font-weight: normal;
+}
+
+@media (max-width: 768px) {
+  .font-minecraft {
+    letter-spacing: 0.075em;
+    line-height: 1.2;
+  }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-body text-medieval-cream bg-medieval-darkest;
+    background-image: radial-gradient(
+      circle at 1px 1px,
+      rgba(212, 175, 55, 0.1) 1px,
+      transparent 0
+    );
+    background-size: 20px 20px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0f172a;
+    border-radius: 6px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #d4af37 0%, #b8941f 100%);
+    border-radius: 6px;
+    border: 2px solid #0f172a;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #ffd700 0%, #d4af37 100%);
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: #0f172a;
+  }
+
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: #d4af37 #0f172a;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 transition-all duration-300 border-2 rounded-full bg-primary-500 text-accent-500 hover:bg-accent-500 hover:text-medieval-darkest hover:scale-105 border-primary-500 hover:border-accent-500;
+    font-family: "Minecraft", "Orbitron", "Arial Black", sans-serif;
+    letter-spacing: 0.08em;
+    font-weight: normal;
+  }
+
+  .btn-outline {
+    @apply px-6 py-3 transition-all duration-300 bg-transparent border-2 rounded-full text-accent-500 hover:bg-accent-500 hover:text-medieval-darkest hover:scale-105 border-accent-500;
+    font-family: "Minecraft", "Orbitron", "Arial Black", sans-serif;
+    letter-spacing: 0.08em;
+    font-weight: normal;
+  }
+
+  .nav-link {
+    @apply relative px-3 py-2 font-medium transition-colors duration-300 rounded-lg text-medieval-cream hover:text-accent-500 font-heading;
+  }
+
+  .nav-link.active {
+    @apply text-accent-500 bg-accent-500 bg-opacity-10;
+  }
+
+  .backdrop-medieval {
+    backdrop-filter: blur(15px);
+    background: linear-gradient(
+      135deg,
+      rgba(15, 23, 42, 0.941) 0%,
+      rgb(51, 65, 85) 100%
+    );
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+  }
+
+  .server-ip {
+    @apply px-4 py-2 font-bold transition-all duration-300 border-2 rounded-full cursor-pointer bg-medieval-darkest text-accent-500 border-accent-500 hover:bg-accent-500 hover:text-medieval-darkest;
+    font-family: "Minecraft", "Orbitron", "Arial Black", sans-serif;
+    letter-spacing: 0.06em;
+  }
+
+  .status-online {
+    @apply font-semibold text-status-online;
+  }
+
+  .status-offline {
+    @apply font-semibold text-status-offline;
+  }
+
+  .section-title {
+    @apply text-3xl tracking-wide text-center md:text-4xl text-accent-500;
+    font-family: "Minecraft", "Orbitron", "Arial Black", sans-serif;
+    letter-spacing: 0.06em;
+    font-weight: normal;
+  }
+
+  .section-subtitle {
+    @apply max-w-2xl mx-auto mb-12 text-lg leading-relaxed text-center font-body text-medieval-cream md:text-xl;
+  }
+
+  .hero-title {
+    @apply mb-6 text-5xl tracking-wider text-center md:text-7xl text-accent-500;
+    font-family: "Minecraft", "Orbitron", "Arial Black", sans-serif;
+    letter-spacing: 0.06em;
+    font-weight: normal;
+  }
+
+  .hero-subtitle {
+    @apply max-w-3xl mx-auto mb-8 text-xl leading-relaxed text-center font-body text-medieval-cream md:text-2xl;
+  }
+
+  .bg-royal-gradient {
+    background: linear-gradient(135deg, #0f172a 0%, #334155 50%, #0f172a 100%);
+  }
+
+  .bg-gold-gradient {
+    background: linear-gradient(45deg, #d4af37 0%, #ffd700 100%);
+  }
+
+  .hover-glow-red {
+    transition: all 0.3s ease;
+  }
+
+  .hover-glow-red:hover {
+    box-shadow: 0 0 30px rgba(51, 65, 85, 0.4), 0 0 60px rgba(51, 65, 85, 0.2);
+    border-color: rgba(51, 65, 85, 0.8) !important;
+  }
+
+  .hover-glow-gold {
+    transition: all 0.3s ease;
+  }
+
+  .hover-glow-gold:hover {
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.4),
+      0 0 60px rgba(212, 175, 55, 0.2);
+    border-color: rgba(212, 175, 55, 0.8) !important;
+  }
+
+  .text-shadow {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  }
+
+  .text-shadow-lg {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), 0 0 10px rgba(51, 65, 85, 0.5);
+  }
+
+  .container-custom {
+    @apply px-4 mx-auto max-w-7xl sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @media (max-width: 768px) {
+    .hero-title {
+      @apply text-4xl;
+    }
+
+    .section-title {
+      @apply text-2xl;
+    }
+
+    .btn-primary,
+    .btn-outline {
+      @apply px-4 py-2 text-sm;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  .nav-link:focus-visible,
+  .btn-primary:focus-visible,
+  .btn-outline:focus-visible,
+  .server-ip:focus-visible {
+    outline: 2px solid #d4af37;
+    outline-offset: 2px;
+  }
+}
+
+.realm-section-norte {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.realm-section-norte::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(51, 65, 85, 0.1), rgba(15, 23, 42, 0.2));
+  z-index: 1;
+}
+
+.realm-section-este {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.realm-section-este::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(212, 175, 55, 0.007), rgba(15, 23, 42, 0.2));
+  z-index: 1;
+}
+
+.realm-section-sur {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.realm-section-sur::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(100, 116, 139, 0.1), rgba(15, 23, 42, 0.2));
+  z-index: 1;
+}
+
+.realm-section-norte > .container-custom,
+.realm-section-este > .container-custom,
+.realm-section-sur > .container-custom {
+  position: relative;
+  z-index: 10;
+}
+
+@media (max-width: 768px) {
+  .realm-section-norte,
+  .realm-section-este,
+  .realm-section-sur {
+    background-attachment: scroll;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .realm-section-norte,
+  .realm-section-este,
+  .realm-section-sur {
+    background-attachment: scroll;
+  }
+}
+
+.bg-store-ranks {
+  background: linear-gradient(rgba(51, 65, 85, 0.4), rgba(15, 23, 42, 0.8)),
+    radial-gradient(circle at 20% 80%, #334155 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, #d4af37 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, #334155 0%, transparent 50%);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.bg-store-ranks::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(51, 65, 85, 0.1);
+  z-index: 1;
+}
+
+.bg-store-kits {
+  background: linear-gradient(rgba(212, 175, 55, 0.3), rgba(15, 23, 42, 0.8)),
+    radial-gradient(circle at 30% 40%, #334155 0%, transparent 50%),
+    radial-gradient(circle at 70% 60%, #d4af37 0%, transparent 50%);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.bg-store-kits::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(212, 175, 55, 0.1);
+  z-index: 1;
+}
+
+.bg-store-cosmetics {
+  background: linear-gradient(rgba(100, 116, 139, 0.3), rgba(15, 23, 42, 0.8)),
+    radial-gradient(circle at 50% 50%, #d4af37 0%, transparent 60%);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.bg-store-cosmetics::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(100, 116, 139, 0.1);
+  z-index: 1;
+}
+
+.bg-store-ranks > .container-custom,
+.bg-store-kits > .container-custom,
+.bg-store-cosmetics > .container-custom {
+  position: relative;
+  z-index: 10;
+}
+
+@media (max-width: 768px) {
+  .bg-store-ranks,
+  .bg-store-kits,
+  .bg-store-cosmetics {
+    background-attachment: scroll;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bg-store-ranks,
+  .bg-store-kits,
+  .bg-store-cosmetics {
+    background-attachment: scroll;
+  }
+}
+
+@media (max-width: 768px) {
+  .realm-section-norte,
+  .realm-section-este,
+  .realm-section-sur,
+  .bg-store-ranks,
+  .bg-store-kits,
+  .bg-store-cosmetics {
+    background-attachment: scroll !important;
+  }
+
+  .animate-float {
+    animation: none !important;
+  }
+
+  .hover-glow-gold:hover,
+  .hover-glow-red:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  .group:hover .group-hover\:scale-110,
+  .hover\:scale-105:hover {
+    transform: none !important;
+  }
+}
+
+.animate-float,
+.group-hover\:scale-110,
+.hover\:scale-105,
+.group-hover\:rotate-12 {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.nav-link,
+.btn-primary,
+.btn-outline,
+.server-ip {
+  will-change: auto;
+}
+
+.nav-link:hover,
+.btn-primary:hover,
+.btn-outline:hover,
+.server-ip:hover {
+  will-change: transform, background-color, border-color;
+}
+
+.backdrop-medieval {
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@media (max-width: 768px) {
+  .bg-store-ranks,
+  .bg-store-kits,
+  .bg-store-cosmetics {
+    background-attachment: scroll !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .group-hover\:scale-110,
+  .hover\:scale-105,
+  .transition-all,
+  .transition-transform,
+  .transition-colors {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+.hover-glow-gold,
+.hover-glow-red {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+@supports (backdrop-filter: blur(15px)) {
+  .backdrop-medieval {
+    backdrop-filter: blur(15px);
+  }
+}
+
+@supports not (backdrop-filter: blur(15px)) {
+  .backdrop-medieval {
+    background: rgba(15, 23, 42, 0.95);
+  }
+}
