@@ -4,7 +4,6 @@ export interface ContactMethod {
   id: string;
   name: string;
   description: string;
-  link: string;
   icon: LucideIcon;
   available: string;
 }

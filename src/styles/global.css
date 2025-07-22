@@ -198,8 +198,8 @@
       @apply text-4xl;
     }
 
-    .section-title {
-      @apply text-2xl;
+    .text-2xl {
+      font-size: 1.3rem !important;
     }
 
     .btn-primary,

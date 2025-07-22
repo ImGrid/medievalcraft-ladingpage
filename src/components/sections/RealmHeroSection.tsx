@@ -17,7 +17,7 @@ const RealmHeroSection: React.FC<RealmHeroSectionProps> = ({ realm }) => {
         backgroundImage: `${realm.gradient}, url('${realm.backgroundImage}')`,
       }}
     >
-      <div className="relative z-10 text-center container-custom">
+      <div className="relative z-10 py-16 text-center container-custom">
         <div className="max-w-4xl mx-auto">
           <div className="flex justify-center mb-6">
             <IconComponent className="w-20 h-20 text-accent-500 animate-float" />

@@ -121,7 +121,7 @@ export const storeData: StoreData = {
     },
     {
       id: "cosmeticos",
-      title: "Cosméticos & Extras",
+      title: "Cosmeticos & Extras",
       description:
         "Personaliza tu experiencia con texture packs medievales, pets únicos, y efectos visuales que te harán destacar entre los demás jugadores.",
       backgroundClass: "bg-store-cosmetics",
@@ -143,7 +143,7 @@ export const storeData: StoreData = {
         },
         {
           id: "pet-dragon",
-          name: "Pet Dragón",
+          name: "Pet Dragon",
           price: "$7.99",
           icon: Zap,
           category: "cosmetic",
@@ -158,7 +158,7 @@ export const storeData: StoreData = {
         },
         {
           id: "particulas-reales",
-          name: "Partículas Reales",
+          name: "Particulas Reales",
           price: "$1.99",
           icon: Crown,
           category: "cosmetic",

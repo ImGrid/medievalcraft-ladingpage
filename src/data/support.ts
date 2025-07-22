@@ -21,7 +21,6 @@ export const supportData: SupportData = {
       name: "Discord",
       description:
         "La forma más rápida de obtener ayuda. Únete a nuestra comunidad.",
-      link: "https://discord.gg/medievalcraft",
       icon: MessageCircle,
       available: "24/7",
     },
@@ -29,7 +28,6 @@ export const supportData: SupportData = {
       id: "email",
       name: "Email",
       description: "Para consultas detalladas o problemas específicos.",
-      link: "mailto:soporte@medievalcraft.com",
       icon: Mail,
       available: "Respuesta en 24h",
     },
@@ -37,7 +35,6 @@ export const supportData: SupportData = {
       id: "tickets",
       name: "Sistema de Tickets",
       description: "Crea un ticket para problemas técnicos o reportes.",
-      link: "#tickets",
       icon: FileText,
       available: "Siempre disponible",
     },

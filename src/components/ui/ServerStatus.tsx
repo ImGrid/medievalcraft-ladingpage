@@ -16,14 +16,14 @@ const ServerStatus: React.FC = () => {
   };
 
   return (
-    <div className="mt-12 p-8 bg-primary-500 bg-opacity-10 border-2 border-accent-500 border-opacity-50 rounded-2xl max-w-md mx-auto hover-glow-gold transition-all duration-300 hover:border-opacity-80 hover:bg-opacity-15">
-      <p className="text-medieval-cream opacity-70 mb-4 text-sm font-heading flex items-center justify-center space-x-2">
+    <div className="max-w-md p-8 mx-auto mt-12 transition-all duration-300 border-2 border-opacity-50 bg-primary-500 bg-opacity-10 border-accent-500 rounded-2xl hover-glow-gold hover:border-opacity-80 hover:bg-opacity-15">
+      <p className="flex items-center justify-center mb-4 space-x-2 text-sm text-medieval-cream opacity-70 font-heading">
         <Wifi size={16} />
         <span>Únete al servidor:</span>
       </p>
       <button
         onClick={handleCopyIP}
-        className="text-accent-500 font-mono text-2xl font-bold bg-medieval-darkest px-6 py-3 rounded-lg border-2 border-primary-500 block hover:border-accent-500 transition-colors duration-300 cursor-pointer w-full flex items-center justify-center space-x-2 group"
+        className="flex items-center justify-center block w-full px-6 py-3 space-x-2 font-mono text-2xl font-bold transition-colors duration-300 border-2 rounded-lg cursor-pointer text-accent-500 bg-medieval-darkest border-primary-500 hover:border-accent-500 group"
       >
         <span>{SERVER_CONFIG.IP}</span>
         {copySuccess ? (
@@ -31,11 +31,11 @@ const ServerStatus: React.FC = () => {
         ) : (
           <Copy
             size={20}
-            className="group-hover:scale-110 transition-transform duration-200"
+            className="transition-transform duration-200 group-hover:scale-110"
           />
         )}
       </button>
-      <div className="text-medieval-cream opacity-70 text-xs mt-4 font-body leading-relaxed flex items-center justify-center space-x-4">
+      <div className="flex items-center justify-center mt-4 space-x-4 text-xs leading-relaxed text-medieval-cream opacity-70 font-body">
         <div className="flex items-center space-x-1">
           {copySuccess ? (
             <CheckCircle size={12} className="text-status-online" />
