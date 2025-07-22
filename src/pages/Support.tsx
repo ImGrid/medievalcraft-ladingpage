@@ -61,21 +61,8 @@ const Support: React.FC = () => {
 const ContactMethodCard: React.FC<{ method: ContactMethod }> = ({ method }) => {
   const IconComponent = method.icon;
 
-  const handleClick = () => {
-    if (method.link.startsWith("mailto:")) {
-      window.location.href = method.link;
-    } else if (method.link.startsWith("http")) {
-      window.open(method.link, "_blank");
-    } else {
-      console.log("Internal link:", method.link);
-    }
-  };
-
   return (
-    <div
-      className="p-6 text-center transition-all duration-300 border-2 cursor-pointer bg-primary-500 bg-opacity-10 border-accent-500 border-opacity-30 hover:border-opacity-60 hover:bg-opacity-20 hover:shadow-lg group hover:-translate-y-1 rounded-xl"
-      onClick={handleClick}
-    >
+    <div className="p-6 text-center transition-all duration-300 border-2 cursor-pointer bg-primary-500 bg-opacity-10 border-accent-500 border-opacity-30 hover:border-opacity-60 hover:bg-opacity-20 hover:shadow-lg group hover:-translate-y-1 rounded-xl">
       <div className="flex justify-center mb-4">
         <IconComponent
           size={48}
