@@ -34,10 +34,14 @@ const Footer: React.FC = memo(() => {
         <div className="grid items-start grid-cols-1 gap-8 py-4 md:grid-cols-3">
           <div className="text-center md:text-left">
             <div className="flex items-center justify-center mb-4 space-x-3 md:justify-start">
-              <div className="flex items-center justify-center w-10 h-10 transition-transform duration-300 rounded-lg bg-gradient-to-br from-accent-400 to-accent-600 hover:scale-110">
-                <span className="text-lg font-bold text-medieval-darkest font-display">
-                  MC
-                </span>
+              <div className="flex items-center justify-center w-10 h-10 transition-transform duration-300 hover:scale-110">
+                <img
+                  src="/images/media_fav.webp"
+                  alt="MedievalCraft"
+                  width={40}
+                  height={40}
+                  className="w-10 h-10 rounded-lg"
+                />
               </div>
               <div>
                 <h3 className="text-xl font-bold font-display text-accent-500">

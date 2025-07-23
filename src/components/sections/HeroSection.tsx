@@ -29,7 +29,7 @@ const HeroSection: React.FC = () => {
             height={96}
             loading="eager"
             fetchPriority="high"
-            className="w-auto h-16 mx-auto md:h-20 lg:h-24 drop-shadow-2xl"
+            className="object-contain w-auto h-16 mx-auto md:h-20 lg:h-24 drop-shadow-2xl"
           />
         </div>
 

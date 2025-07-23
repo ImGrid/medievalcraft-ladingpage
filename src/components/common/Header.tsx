@@ -62,7 +62,7 @@ const Header: React.FC = memo(() => {
                 width={200}
                 height={32}
                 loading="eager"
-                className="w-auto h-8 transition-all duration-300 group-hover:scale-105"
+                className="object-contain w-auto h-8 transition-all duration-300 group-hover:scale-105"
                 style={{ maxWidth: "200px" }}
               />
             </div>
